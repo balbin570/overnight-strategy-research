@@ -1,0 +1,19 @@
+name: Swing Yahoo Scheme 1 Research
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'numpy<3' 'pandas<3' pyarrow yfinance
+      - name: Fetch historical daily prices
+        run: python download_yahoo.py
+      - name: Run Swing Scheme 1
+        run: python trend/backtest.py --scheme 1

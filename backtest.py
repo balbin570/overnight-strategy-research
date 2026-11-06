@@ -50,7 +50,7 @@ def _session_times(market: str):
 # 港股真实成本约 32-42 bps 双边（印花税买卖各 0.13% 是大头 + 佣金 + 滑点），单边取 18；
 # 美股真实成本约 3-7 bps 双边（零佣金券商 + 滑点），单边取 3。
 # 可用 params 显式覆盖（params={"cost_bps": X}），否则按标的所属市场自动选。
-MARKET_COST_BPS = {"HK": 18.0, "US": 15.0}
+MARKET_COST_BPS = {"HK": 18.0, "US": 3.0}
 
 # 默认回测参数（可按需覆盖）
 DEFAULT_PARAMS = {

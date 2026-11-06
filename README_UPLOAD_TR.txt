@@ -1,0 +1,1 @@
+Bu ZIP dosyasını GitHub deposunun ana dizinine klasör yapısını koruyarak yükleyin. engine/ ve trend/ klasörleri ayrı kalmalıdır. Mevcut kök dizindeki dosyaları silmeyin. Actions > Swing Yahoo Scheme 1 Research > Run workflow. Araştırma amaçlıdır; emir göndermez. Yahoo verisi Futu verisiyle aynı olmayabilir.
