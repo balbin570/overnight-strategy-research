@@ -16,4 +16,4 @@ jobs:
       - name: Fetch historical daily prices
         run: python download_yahoo.py
       - name: Run Swing Scheme 1
-        run: python trend/backtest.py --scheme 1
+        run: python backtest.py --scheme 1
