@@ -30,7 +30,7 @@ jobs:
         env:
           MPLBACKEND: Agg
         run: |
-          python overnight_cost_test/backtest_long_cost030.py
+          python backtest_long_cost030.py
 
       - name: Upload backtest results
         if: always()
