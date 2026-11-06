@@ -3,6 +3,7 @@ import pandas as pd
 import yfinance as yf
 import numpy as np
 import requests
+from io import StringIO
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import warnings
@@ -23,7 +24,7 @@ QUICK_MODE = False
 def get_sp500_tickers() -> list:
     headers = {"User-Agent": "Mozilla/5.0"}
     url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
-    tables = pd.read_html(requests.get(url, headers=headers).content)
+    tables = pd.read_html(StringIO(requests.get(url, headers=headers).text))
     for t in tables:
         if "Symbol" in t.columns:
             return t["Symbol"].str.replace(".", "-", regex=False).tolist()
