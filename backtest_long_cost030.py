@@ -124,7 +124,7 @@ def build_spy_bh(spy_df: pd.DataFrame, strategy_dates: list) -> dict:
     spy_window["equity"] = CAPITAL_INIT * (spy_window["Close"] / spy_window["Close"].iloc[0])
 
     idx = pd.DatetimeIndex([pd.Timestamp(d) for d in strategy_dates])
-    equity_aligned = spy_window["equity"].reindex(idx, method="ffill").fillna(method="bfill")
+    equity_aligned = spy_window["equity"].reindex(idx, method="ffill").bfill()
 
     return {
         "dates":  strategy_dates,
